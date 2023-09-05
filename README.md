@@ -48,7 +48,7 @@
   <li><strong>Fee structure:</strong> Provides all the information about fee structure.</li>
 </ul>
 <h2>Mind Map</h2>
-<img src="https://github.com/Prajwalds1/Chatbot004/blob/main/mind%20map.jpg.png"></img>
+<img src="https://github.com/Prajwalds1/Chatbot004/blob/main/Mindmap.jpg"></img>
 
 <h2>Flowchart</h2>
 <img src="https://github.com/TejasJain03/Technical-Training-Pharma-Management/blob/main/Flowchart.png"></img>
