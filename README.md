@@ -23,7 +23,7 @@
 <ul>
   <li>The Faculty login provides access to exclusive administrative functions.</li>
   <li>Only authorized personnel will have access to the Faculty login.</li>
-  <li>Once logged in as an Faculty, the user gains control over Department management.</li>
+  <li>Once logged in as an Faculty, the faculty gains control over Department management.</li>
 </ul>
 
 <h3>USER Login</h3>
