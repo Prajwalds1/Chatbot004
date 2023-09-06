@@ -1,7 +1,7 @@
 <h1>Chatbot</h1>
 <p>College Chatbot is a simple application which aims to provide the information regarding college asked by the user.. The system provides two login options: FACULTY and USER. The FACULTY login allows authorized personnel to control and manage the College Administrative tasks, while the USER login allows regular users to view available college information and make enquiries.</p>
 
-<h2>User Roles</h2>
+<h2> Roles</h2>
 <p>The College Chatbot has two user roles:</p>
 <ul>
   <li><strong>FACULTY:</strong> Authorized personnel responsible for managing the College management and performing administrative functions.</li>
