@@ -51,5 +51,5 @@
 <img src="https://github.com/Prajwalds1/Chatbot004/blob/main/Mindmap.jpg"></img>
 
 <h2>Flowchart</h2>
-<img src=""></img>
+<img src="https://github.com/Prajwalds1/Chatbot004/blob/main/FLOWCHART.png"></img>
 
