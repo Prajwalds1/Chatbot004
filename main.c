@@ -2,6 +2,7 @@
 #include <string.h>
 #include <stdlib.h>
 
+//Function for calculating grades
 char calculate_grade(float percentage) {
     if (percentage >= 90) {
         return 'A';
@@ -15,8 +16,9 @@ char calculate_grade(float percentage) {
         return 'F';
     }
 }
-
+//Function to Track attendence
 void trackAttendance() {
+// Printing attendance details for multiple students
     printf("Name:Ramesh\n");
     printf("Branch=IC\n");
     printf("Total Percentage=88%%\n\n");
@@ -54,8 +56,9 @@ void trackAttendance() {
     printf("Total Percentage=35%%\n\n");
     
 }
-
+//Function to call Timetable
 void viewTimeTable() {
+ // Printing the timetable for each day of the week
     printf("Day      :I\t\tII\tIII\tIV\tV\tVI\n");
     printf("Monday   :21CSL46\t21CS43\t21CS41\t21CSL46\t21CIP47\t21CS43\n");
     printf("Tuesday  :21MAT21\t21CS43\t21CS44\t21CSL46\t21UHV47\t21CS42\n");
@@ -64,8 +67,9 @@ void viewTimeTable() {
     printf("Friday   :21CS46\t21CS43\t21MAT41\t21CS42\t21UHV47\t21CS43\n");
     printf("Satruday :21CSL46\t21CS43\t21CS41\n");
 }
-
+//Main Function
 int main() {
+// Variable Declarations
     int choice;
     int userChoice;
     int courseChoice;
@@ -77,17 +81,19 @@ int main() {
     char name[15];
     char password[] = "123"; 
     char pass[10];
-
+// User selection: User or Faculty
     printf("Select an option:\n");
     printf("1. User\n");
     printf("2. Faculty\n");
     scanf("%d", &choice);
+// Main program loop
     switch (choice){
     case 1:
     printf("Enter the name:");
     }
     while(1){
     switch (choice){
+// User Menu
     case 1:
         printf("Welcome, User!\n");
         printf("Select an option:\n");
@@ -100,19 +106,23 @@ int main() {
         scanf("%d", &userChoice);
         switch (userChoice) {
         case 1:
+       // About College
             printf("Mangalore Institute of Technology and Engineering (MITE) is an engineering and management institution located in Mangalore, India, established by the Rajalaxmi Education Trust under the leadership of Rajesh Chouta in 2007.[1] The institute is affiliated to the Visvesvaraya Technological University, Belgaum, and approved by the All India Council of Technical Education (AICTE), New Delhi. MITE, established in 2007, today stands tall with 3000+ students, 180+ Faculty, offering 9 Undergraduate Programs in Engineering, 1 Post Graduate Program in Engineering, Masters of Computer Applications, Master of Business Administration (MBA) and 7 research programs.[2] "
                    "MITE is accredited by National Assessment and Accreditation Council (NAAC) with A+ Grade, a CGPA Score of 3.44 out of 4\n");
             break;
 
         case 2:
+        // Fees Structure
             printf("B.Tech: INR 13.10 Lakh \n M.Tech: INR 3.24 Lakh \n MBA: INR 2 Lakh \n  MCA: INR 3.24 Lakh\n");
             break;
 
         case 3:
+        //Faculty Details
             printf("Prof. Prashanth C M Principal\nDr. Anand S N HoD – Aeronautical Engg\nDr. Ravinarayana B HoD – Computer Sc & Engg\nProf. Manjunath H HoD – Information Sc & Engg\nDr. Vinayambika S Bhat HoD – Electronics & Commn Engg\nDr. Shivananda V Seeri HoD – CSE (IoT & Cyber security with Blockchain Technology)\nMr. Sunil Kumar HoD – Dept of AI & ML\nDr. Ganesh Mogaveer HoD – Civil Engg\nDr. Vineetha Telma D’Souza HoD – Dept of Chemistry\nDr. Raghavendra Sagar HoD – Dept of Physics\nDr. Jyothi S HoD – Dept of Mathematics\n");
             break;
 
         case 4:
+        // Course Details
             printf("Select an option:\n");
             printf("1. Undergraduate\n");
             printf("2. Postgraduate\n");
@@ -137,12 +147,14 @@ int main() {
             break;
 
         case 5:
+        //User Feedback
             printf("Enter your Feedback:\n");
             scanf("%1999s", feedback); // Read up to 1999 characters to avoid buffer overflow
             printf("Your Feedback: %s\n", feedback);
             break;
         
         case 0:
+        //Exit
             printf("Exiting the program. Goodbye!\n");
             exit(0);
             
@@ -153,6 +165,7 @@ int main() {
             
         
     case 2:
+        //Faculty Login
         printf("Enter your user name:\n");
         scanf("%14s", name); // Increased the size to account for the null terminator
         printf("Enter your user password:\n");
@@ -168,6 +181,7 @@ int main() {
             while(1)
             switch (faculty) {
             case 1:
+            //Faculty Menu
                 printf("Undergraduate courses:\n");
                 printf("Choose an option:\n");
                 printf("1. Track Attendance\n");
@@ -177,19 +191,22 @@ int main() {
                 printf("0. Exit\n");
                 printf("Enter your choice: ");
                 scanf("%d", &Department);
-
+             //Department Menu
                 switch (Department) {
                 case 1:
+                    //Tracking Attendence
                     trackAttendance();
                     break;
 
                 case 2:
+                    // Grade Assignments
                     printf("Grading Assignment");
                     printf("Enter the subject:");
                     
                     break;
 
                 case 3:
+                    //Calculating Grades
                     printf("Enter the percentage: ");
                     scanf("%f", &percentage);
 
@@ -198,6 +215,7 @@ int main() {
                     break;
 
                 case 4:
+                    //view Timetable
                     viewTimeTable();
                     break;
 
@@ -212,7 +230,7 @@ int main() {
                 break;
 
             case 2:
-                
+            //Syllabus menu
             printf("Select an option:\n");
             printf("1. IT Branch\n");
             printf("2. Core Branch\n");
