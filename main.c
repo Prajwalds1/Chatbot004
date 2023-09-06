@@ -81,6 +81,7 @@ int main() {
     char name[15];
     char password[] = "123"; 
     char pass[10];
+    
 // User selection: User or Faculty
     printf("Select an option:\n");
     printf("1. User\n");
@@ -90,13 +91,14 @@ int main() {
     switch (choice){
     case 1:
     printf("Enter the name:");
+    scanf("%14s", name);
     }
     while(1){
     switch (choice){
 // User Menu
     case 1:
-        printf("Welcome, User!\n");
-        printf("Select an option:\n");
+        printf("welcome %s",name);
+        printf("\nSelect an option:\n");
         printf("1. About College\n");
         printf("2. Fees Structure\n");
         printf("3. Faculty details\n");
@@ -162,7 +164,7 @@ int main() {
             printf("Invalid choice!\n");
             break;
         }
-            
+           break; 
         
     case 2:
         //Faculty Login
@@ -269,5 +271,5 @@ int main() {
         break;
     }
 }
-   return 0;
+  return 0;
 }
