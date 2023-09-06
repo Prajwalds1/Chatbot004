@@ -84,6 +84,7 @@ int main() {
     char grade[10];
     char subject[15];
 // User selection: User or Faculty
+    printf("*************WELCOME TO MITE*************\n");
     printf("Select an option:\n");
     printf("1. User\n");
     printf("2. Faculty\n");
