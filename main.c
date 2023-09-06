@@ -81,7 +81,8 @@ int main() {
     char name[15];
     char password[] = "123"; 
     char pass[10];
-    
+    char grade[10];
+    char subject[15];
 // User selection: User or Faculty
     printf("Select an option:\n");
     printf("1. User\n");
@@ -184,7 +185,7 @@ int main() {
             switch (faculty) {
             case 1:
             //Faculty Menu
-                printf("Undergraduate courses:\n");
+                printf("\nUndergraduate courses:\n");
                 printf("Choose an option:\n");
                 printf("1. Track Attendance\n");
                 printf("2. Grade Assignments\n");
@@ -202,9 +203,14 @@ int main() {
 
                 case 2:
                     // Grade Assignments
-                    printf("Grading Assignment");
+                    printf("Grading Assignment\n");
+                    printf("Enter the name:");
+                    scanf("%14s", name);
                     printf("Enter the subject:");
-                    
+                    scanf("%14s", subject);
+                    printf("Enter the Grade:\n");
+                    scanf("%14s", grade);
+                    printf("%s scored %s GRADE in %s subject",name,grade,subject);
                     break;
 
                 case 3:
