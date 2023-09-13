@@ -132,7 +132,7 @@ int main() {
             printf("2. Postgraduate\n");
             scanf("%d", &courseChoice);
             
-            while(1)
+            while(1){
             switch (courseChoice) {
             case 1:
                 printf("Undergraduate courses:\n");
@@ -148,7 +148,7 @@ int main() {
                 printf("Invalid choice!\n");
                 break;
             }
-            break;
+            break;}
 
         case 5:
         //User Feedback
