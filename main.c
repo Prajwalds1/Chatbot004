@@ -18,62 +18,53 @@ char calculate_grade(float percentage) {
 }
 //Function to Track attendence
 void trackAttendance() {
-// Printing attendance details for multiple students
-    printf("Name:Ramesh\n");
-    printf("Branch=IC\n");
-    printf("Total Percentage=88%%\n\n");
-    
-    printf("Name:Mohan\n");
-    printf("Branch=IC\n");
-    printf("Total Percentage=85%%\n\n");
-    
-    printf("Name:Akhilesh\n");
-    printf("Branch=IC\n");
-    printf("Total Percentage=100%%\n\n");
-    
-    printf("Name:Roy\n");
-    printf("Branch=IC\n");
-    printf("Total Percentage=90%%\n\n");
-    
-    printf("Name:Mark\n");
-    printf("Branch=IC\n");
-    printf("Total Percentage=91%%\n\n");
-    
-    printf("Name:Justin\n");
-    printf("Branch=IC\n");
-    printf("Total Percentage=93%%\n\n");
-    
-    printf("Name:Matt\n");
-    printf("Branch=IC\n");
-    printf("Total Percentage=75%%\n\n");
-    
-    printf("Name:Pete\n");
-    printf("Branch=IC\n");
-    printf("Total Percentage=99%%\n\n");
-    
-    printf("Name:Ben\n");
-    printf("Branch=IC\n");
-    printf("Total Percentage=35%%\n\n");
+// Open the attendance file for reading
+    FILE *attendanceFile = fopen("attendance.txt", "r");
+    if (attendanceFile == NULL) {
+        perror("Error opening attendance file");
+        return;
+    }
+
+    char line[100];
+    while (fgets(line, sizeof(line), attendanceFile)) {
+        printf("%s", line);
+    }
+
+    // Close the file
+    fclose(attendanceFile);
     
 }
 //Function to call Timetable
 void viewTimeTable() {
- // Printing the timetable for each day of the week
-    printf("Day      :I\t\tII\tIII\tIV\tV\tVI\n");
-    printf("Monday   :21CSL46\t21CS43\t21CS41\t21CSL46\t21CIP47\t21CS43\n");
-    printf("Tuesday  :21MAT21\t21CS43\t21CS44\t21CSL46\t21UHV47\t21CS42\n");
-    printf("Wednesday:21BE45\t21CS43\t21CS42\t21MAT41\t21CS48\t21CS43\n");
-    printf("Thursday :21INT49\t21CS481\t21CS44\t21CS42\t21CIP47\t21CS44\n");
-    printf("Friday   :21CS46\t21CS43\t21MAT41\t21CS42\t21UHV47\t21CS43\n");
-    printf("Satruday :21CSL46\t21CS43\t21CS41\n");
+  // Open the timetable file for reading
+    FILE *timetableFile = fopen("timetable.txt", "r");
+    if (timetableFile == NULL) {
+        perror("Error opening timetable file");
+        return;
+    }
+
+    char line[100];
+    while (fgets(line, sizeof(line), timetableFile)) {
+        printf("%s", line);
+    }
+
+    // Close the file
+    fclose(timetableFile);
 }
+
+// Function to get user feedback
+void getUserFeedback(char *feedback, int maxLength) {
+    printf("Enter your Feedback:\n");
+    scanf(" %[^\n]", feedback); // Read a line of text as feedback
+}
+
 //Main Function
 int main() {
 // Variable Declarations
     int choice;
     int userChoice;
     int courseChoice;
-    int faculty;
+    int fileEditChoice;
     int Department;
     float percentage;
     int syllabus;
@@ -111,20 +102,60 @@ int main() {
         switch (userChoice) {
         case 1:
        // About College
-            printf("Mangalore Institute of Technology and Engineering (MITE) is an engineering and management institution located in Mangalore, India, established by the Rajalaxmi Education Trust under the leadership of Rajesh Chouta in 2007.[1] The institute is affiliated to the Visvesvaraya Technological University, Belgaum, and approved by the All India Council of Technical Education (AICTE), New Delhi. MITE, established in 2007, today stands tall with 3000+ students, 180+ Faculty, offering 9 Undergraduate Programs in Engineering, 1 Post Graduate Program in Engineering, Masters of Computer Applications, Master of Business Administration (MBA) and 7 research programs.[2] "
-                   "MITE is accredited by National Assessment and Accreditation Council (NAAC) with A+ Grade, a CGPA Score of 3.44 out of 4\n");
-            break;
+           {
+            FILE *aboutCollegeFile = fopen("about_college.txt", "r");
+            if (aboutCollegeFile == NULL) {
+            perror("Error opening about_college file");
+             break;
+             }
+
+            char line[100];
+            while (fgets(line, sizeof(line), aboutCollegeFile)) {
+            printf("%s", line);
+            }
+
+            // Close the file
+        
+            fclose(aboutCollegeFile);
+         }
+        break;
 
         case 2:
         // Fees Structure
-            printf("B.Tech: INR 13.10 Lakh \n M.Tech: INR 3.24 Lakh \n MBA: INR 2 Lakh \n  MCA: INR 3.24 Lakh\n");
-            break;
+        {
+                            FILE *feesFile = fopen("fees_structure.txt", "r");
+                            if (feesFile == NULL) {
+                                perror("Error opening fees_structure file");
+                                break;
+                            }
 
+                            char line[100];
+                            while (fgets(line, sizeof(line), feesFile)) {
+                                printf("%s", line);
+                            }
+
+                            // Close the file
+                            fclose(feesFile);
+                        }
+                        break;   
         case 3:
         //Faculty Details
-            printf("Prof. Prashanth C M Principal\nDr. Anand S N HoD – Aeronautical Engg\nDr. Ravinarayana B HoD – Computer Sc & Engg\nProf. Manjunath H HoD – Information Sc & Engg\nDr. Vinayambika S Bhat HoD – Electronics & Commn Engg\nDr. Shivananda V Seeri HoD – CSE (IoT & Cyber security with Blockchain Technology)\nMr. Sunil Kumar HoD – Dept of AI & ML\nDr. Ganesh Mogaveer HoD – Civil Engg\nDr. Vineetha Telma D’Souza HoD – Dept of Chemistry\nDr. Raghavendra Sagar HoD – Dept of Physics\nDr. Jyothi S HoD – Dept of Mathematics\n");
-            break;
+           {
+                            FILE *facultyFile = fopen("faculty_details.txt", "r");
+                            if (facultyFile == NULL) {
+                                perror("Error opening faculty_details file");
+                                break;
+                            }
 
+                            char line[100];
+                            while (fgets(line, sizeof(line), facultyFile)) {
+                                printf("%s", line);
+                            }
+
+                            // Close the file
+                            fclose(facultyFile);
+                        }
+                        break; 
         case 4:
         // Course Details
             printf("Select an option:\n");
@@ -136,13 +167,43 @@ int main() {
             switch (courseChoice) {
             case 1:
                 printf("Undergraduate courses:\n");
-                printf("AERONAUTICAL ENGINEERING\nCIVIL ENGINEERING\nCOMPUTER SCIENCE & ENGINEERING\nARTIFICIAL INTELLIGENCE & MACHINE LEARNING\nCSE(IOT AND CYBER SECURITY WITH BLOCKCHAIN TECHNOLOGY)\nINFORMATION SCIENCE AND ENGINEERING\nELECTRONICS AND COMMUNICATION ENGINEERING\nMECHANICAL ENGINEERING\n");
-                break;
+                
+                {
+                            FILE *UndergraduateFile = fopen("Undergraduate_courses.txt", "r");
+                            if (UndergraduateFile == NULL) {
+                                perror("Error opening Undergraduate_courses file");
+                                break;
+                            }
+
+                            char line[100];
+                            while (fgets(line, sizeof(line),UndergraduateFile)) {
+                                printf("%s", line);
+                            }
+
+                            // Close the file
+                            fclose(UndergraduateFile);
+                        }
+                        break;
 
             case 2:
                 printf("Postgraduate courses:\n");
-                printf("MBA\n MCA\n COMPUTER SCIENCE AND ENGINEERING(M-TECH)\n"); // Corrected "print" to "printf"
-                break;
+                
+            {
+                            FILE *PostgraduateFile = fopen("Postgraduate_courses.txt", "r");
+                            if (PostgraduateFile == NULL) {
+                                perror("Error opening Postgraduate_courses file");
+                                break;
+                            }
+
+                            char line[100];
+                            while (fgets(line, sizeof(line), PostgraduateFile)) {
+                                printf("%s", line);
+                            }
+
+                            // Close the file
+                            fclose(PostgraduateFile);
+                        }
+                        break;
 
             default:
                 printf("Invalid choice!\n");
@@ -152,11 +213,13 @@ int main() {
 
         case 5:
         //User Feedback
-            printf("Enter your Feedback:\n");
-            scanf("%1999s", feedback); // Read up to 1999 characters to avoid buffer overflow
-            printf("Your Feedback: %s\n", feedback);
-            break;
-        
+            {
+                            char feedback[2000];
+                            getUserFeedback(feedback, sizeof(feedback));
+                            printf("Your Feedback: %s\n", feedback);
+                        }
+                        break;
+       
         case 0:
         //Exit
             printf("Exiting the program. Goodbye!\n");
@@ -180,10 +243,12 @@ int main() {
             printf("Select an option:\n");
             printf("1. Department\n");
             printf("2. Syllabus copy \n");
-            scanf("%d", &faculty);
+            printf("3. Create Text File\n");
+            printf("4. Write/Edit Text File\n");
+            scanf("%d", &fileEditChoice);
             
             while(1)
-            switch (faculty) {
+            switch (fileEditChoice) {
             case 1:
             //Faculty Menu
                 printf("\nUndergraduate courses:\n");
@@ -248,13 +313,43 @@ int main() {
             switch (syllabus) {
             case 1:
                 printf("IT Branch:\n");
-                printf("COMPUTER SCIENCE & ENGINEERING\nARTIFICIAL INTELLIGENCE & MACHINE LEARNING\nCSE(IOT AND CYBER SECURITY WITH BLOCKCHAIN TECHNOLOGY)\nINFORMATION SCIENCE AND ENGINEERING\n");
-                break;
+                 {
+                            FILE *IT_BranchFile = fopen("IT_Branch.txt", "r");
+                            if (IT_BranchFile == NULL) {
+                                perror("Error opening IT_Branch file");
+                                break;
+                            }
+
+                            char line[100];
+                            while (fgets(line, sizeof(line), IT_BranchFile)) {
+                                printf("%s", line);
+                            }
+
+                            // Close the file
+                            fclose(IT_BranchFile);
+                        }
+                        break;
+               
 
             case 2:
                 printf("Core Branch:\n");
-                printf("AERONAUTICAL ENGINEERING\nCIVIL ENGINEERING\n ELECTRONICS AND COMMUNICATION ENGINEERING\nMECHANICAL ENGINEERING\n");
-                break;
+                 {
+                            FILE *Core_BranchFile = fopen("Core_Branch.txt", "r");
+                            if (Core_BranchFile == NULL) {
+                                perror("Error opening IT_Branch file");
+                                break;
+                            }
+
+                            char line[100];
+                            while (fgets(line, sizeof(line),Core_BranchFile)) {
+                                printf("%s", line);
+                            }
+
+                            // Close the file
+                            fclose(Core_BranchFile);
+                        }
+                        break;
+            
 
             default:
                 printf("Invalid choice!\n");
@@ -262,10 +357,58 @@ int main() {
             }
                 break;
 
+             case 3:
+            // Create and Write Text File
+            {
+                printf("Enter the name of the new text file (e.g., new_file.txt):\n");
+                char newFileName[50];
+                scanf("%49s", newFileName); // Limit input to 49 charactersr
+
+                FILE *newFile = fopen(newFileName, "w"); // Open in write mode
+                if (newFile == NULL) {
+                    perror("Error creating text file");
+                    break;
+                }
+
+                char newContent[1000];
+                printf("Enter content for '%s':\n", newFileName);
+                scanf(" %[^\n]", newContent); // Read a line of text
+                fprintf(newFile, "%s", newContent); // Write the new content
+                fclose(newFile);
+
+                printf("New text file '%s' created and written successfully.\n", newFileName);
+            }
+            exit(0);
+
+            case 4:
+            // Write/Edit Text File
+            {
+                printf("Enter the name of the text file you want to edit (e.g., about_college.txt):\n");
+                char fileName[50];
+                scanf("%49s", fileName); // Limit input to 49 characters
+
+                FILE *editFile = fopen(fileName, "w"); // Open in write mode
+                if (editFile == NULL) {
+                    perror("Error opening text file for editing");
+                    break;
+                }
+
+                char newContent[1000];
+                printf("Enter new content for '%s':\n", fileName);
+                scanf(" %[^\n]", newContent); // Read a line of text
+                fprintf(editFile, "%s", newContent); // Write the new content
+                fclose(editFile);
+
+                printf("'%s' edited successfully.\n", fileName);
+            }
+            exit(0);
+
             default:
                 printf("Invalid choice!\n");
                 break;
             }
+
+
         } 
         else 
         {
